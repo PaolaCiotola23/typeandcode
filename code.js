@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "t",
+  testo: "typeo"s
 
   dimensione: 0.8,
   interlinea: 0.7,
