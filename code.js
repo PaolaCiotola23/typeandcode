@@ -68,7 +68,7 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("white");
+  background("black");
 
   // [INFO] Rimuovi il commento per disegnare il testo
   fill("nofill");
@@ -82,6 +82,6 @@ export function sotto(disegnaTesto) {
  */
 export function sopra(disegnaTesto) {
   // [INFO] Rimuovi il commento per disegnare il testo
-  //fill("black");
+  fill("white");
   // disegnaTesto();
 }
