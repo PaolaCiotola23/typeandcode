@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "P",
+  testo: "t",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -7,9 +7,9 @@ export const configurazione = {
   percorsoFont: "./assets/InputMonoCondensed-BoldItalic.ttf",
 
   sensibilitàMicrofonoBase: 1,
-  densitàPuntiBase: 1,
+  densitàPuntiBase: 4,
 
-  nascondiInterfaccia: false,
+  nascondiInterfaccia: true,
 };
 
 /**
@@ -42,19 +42,9 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
-  const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
+  let larghezza = map(sin(frameCount * 10 + indice), -1, 1, -20, -40);
 
-  if (indice % 2 == 0) {
-    fill("black");
-  } else {
-    fill("white");
-  }
-  noStroke();
-
-  push();
-  translate(x, y);
-  ellipse(0, 0, size);
-  pop();
+  rect(x, y, larghezza, unita);
 }
 
 /**
@@ -70,6 +60,7 @@ export function caricamentoRisorse() {}
 export function impostazioni() {
   frameRate(30);
   angleMode(DEGREES);
+  rectMode(CENTER);
 }
 
 /**
@@ -77,11 +68,12 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("white");
 
   // [INFO] Rimuovi il commento per disegnare il testo
-  fill("white");
+  fill("nofill");
   disegnaTesto();
+  fill("yellow");
 }
 
 /**
@@ -90,6 +82,6 @@ export function sotto(disegnaTesto) {
  */
 export function sopra(disegnaTesto) {
   // [INFO] Rimuovi il commento per disegnare il testo
-  // fill("black");
+  //fill("black");
   // disegnaTesto();
 }
