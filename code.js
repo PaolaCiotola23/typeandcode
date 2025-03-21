@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "spype",
+  testo: "t",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -43,7 +43,11 @@ export function disegnaPunto({
   gamma = 0,
 }) {
   let larghezza = map(sin(frameCount * 10 + indice), -1, 1, -20, -40);
-  rect(x, y, larghezza, unita);
+  //rect(x, y, 10, 10);
+  push();
+  translate(x, y);
+  line(0, 0, 0, beta);
+  pop();
 }
 
 /**
@@ -70,9 +74,9 @@ export function sotto(disegnaTesto) {
   background("white");
 
   // [INFO] Rimuovi il commento per disegnare il testo
-  fill("nofill");
-  disegnaTesto();
-  fill("yellow");
+  fill("white");
+  //disegnaTesto();
+  fill("white");
 }
 
 /**
