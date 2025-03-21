@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "spype",
+  testo: "t",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -67,12 +67,12 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("white");
+  background("#2C109E");
 
   // [INFO] Rimuovi il commento per disegnare il testo
   fill("nofill");
-  disegnaTesto();
-  fill("yellow");
+  //disegnaTesto();
+  fill("#D1E30A");
 }
 
 /**
